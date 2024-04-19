@@ -40,11 +40,11 @@ Clone and build the repository:
 ```
 cd ~/catkin_ws/src
 git clone https://github.com/bytedance/SchurVINS.git
-source ~/catkin_ws/devel/setup.bash
-mkdir -p ~/catkin_ws/src/SchurVINS/results
-mkdir -p ~/catkin_ws/src/SchurVINS/logs
-vcs-import < ./SchurVINS/dependencies.yaml
+mkdir -p ~/catkin_ws/src/SchurVINS-noetic/results
+mkdir -p ~/catkin_ws/src/SchurVINS-noetic/logs
+vcs-import < ./SchurVINS-noetic/dependencies.yaml
 touch minkindr/minkindr_python/CATKIN_IGNORE
+cd ..
 catkin build
 ```
 
@@ -54,6 +54,7 @@ We provide examples to run SchurVINS with [EuRoC dataset](https://projects.asl.e
 Open three terminals, launch the schur_vins , rviz and play the bag file respectively. Take MH_01 for example 
 
 ```
+source ~/catkin_ws/devel/setup.bash
 roslaunch svo_ros euroc_vio_stereo.launch
 rviz -d svo_ros/rviz_config.rviz
 rosbag play YOUR_PATH_TO_DATASET/MH_01_easy.bag 
